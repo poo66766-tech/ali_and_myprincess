@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111416">
+    <meta name="description" content="حكاية خاصة بين لولي وأميرته.">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <title>لولي وأميرته — حكاية خاصة</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" id="skipLink" href="#story" tabindex="-1">تخطي للمحتوى</a>
+
+    <section class="opening" id="opening" role="dialog" aria-modal="true" aria-labelledby="opening-title" tabindex="-1">
+      <div class="opening-inner">
+        <div class="opening-mark" aria-hidden="true">ل</div>
+        <p class="eyebrow">حكاية صغيرة… تخصّنا إحنا وبس</p>
+        <h1 id="opening-title" class="opening-narrative" aria-live="polite">مش كل الحكايات بتبدأ بحكاية...</h1>
+        <p class="wait-label" id="waitLabel">بنجهّز لحظة البداية</p>
+        <div class="opening-progress" role="progressbar" aria-label="لحظة البداية" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><i id="openingBar"></i></div>
+        <button class="primary-button" id="openStory" type="button" disabled>لسه شوية…</button>
+      </div>
+    </section>
+
+    <header class="site-header" inert>
+      <a class="wordmark" href="./" id="wordmark" aria-label="لولي وأميرته، بداية الحكاية"><span id="headerAli">لولي</span> <small id="headerAmira">وأميرته</small></a>
+      <div class="header-tools">
+        <span class="micro-label">حكاية من القلب</span>
+        <div class="music-controls" aria-label="الموسيقى الاختيارية">
+          <button class="music-control" id="musicButton" type="button" aria-pressed="false" title="تشغيل موسيقى اختيارية">♫ الموسيقى</button>
+          <button class="music-control music-mute" id="musicMute" type="button" aria-pressed="false" disabled>كتم الصوت</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="story" class="story-wrap" tabindex="-1" hidden>
+      <div class="progress-wrap" aria-label="تقدّم الحكاية">
+        <div class="progress-track" role="progressbar" aria-label="أجزاء الحكاية" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1"><span id="progressFill"></span></div>
+        <span class="progress-text" id="progressText">الفصل ١ من ١٠</span>
+      </div>
+      <article id="chapter" class="chapter" aria-live="polite"></article>
+      <footer class="site-footer"><span class="heart-mark" aria-hidden="true">♥</span> <span id="footerNames"></span> <span aria-hidden="true">—</span> حكاية بتتكتب على مهل</footer>
+    </main>
+
+    <div class="photo-dialog" id="photoDialog" role="dialog" aria-modal="true" aria-labelledby="photoTitle" aria-hidden="true">
+      <div class="photo-detail">
+        <button class="dialog-close" type="button" id="closePhoto" aria-label="إغلاق الصورة">إغلاق ×</button>
+        <div class="photo-detail-art" id="photoArt" aria-hidden="true"></div>
+        <h2 id="photoTitle"></h2>
+        <time class="photo-detail-date" id="photoDate"></time>
+        <p id="photoCaption"></p>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <button class="hidden-heart" id="hiddenHeart" type="button" aria-label="رسالة سرّية صغيرة">♥</button>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="music-status" id="musicStatus" role="status" aria-live="polite"></div>
+    <audio id="optionalMusic" loop preload="none"></audio>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
